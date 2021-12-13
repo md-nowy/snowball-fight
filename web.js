@@ -13,7 +13,7 @@ app.post('/', function (req, res) {
     let moveOrThrow = "T"
 
     if (myState.wasHit) {
-        moveOrThrow = listOf("F")
+        moveOrThrow = "F"
     }
 
     res.send(moveOrThrow);
