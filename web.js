@@ -5,15 +5,18 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 
 app.get('/', function (req, res) {
-  res.send('Let the battle begin!');
+    res.send('Let the battle begin!');
 });
 
 app.post('/', function (req, res) {
-// console.error('Im here')
-//   console.log(req.body);
-//   const moves = ['F', 'T', 'L', 'R'];
-//   res.send(moves[Math.floor(Math.random() * moves.length)]);
-  res.send('T');
+    let myState = arenaUpdate.arena.state[arenaUpdate._links.self.href]
+    let move = "T"
+
+    if (myState.wasHit) {
+        move = listOf("F")
+    }
+
+    res.send(move);
 });
 
 app.listen(process.env.PORT || 8080);
