@@ -9,8 +9,8 @@ app.get('/', function (req, res) {
 });
 
 app.post('/', function (req, res) {
-    // let gameState = req.body
-    // let myState = gameState.arena.state[gameState._links.self.href]
+    let gameState = req.body
+    let myState = gameState.arena.state[gameState._links.self.href]
     let moveOrThrow = "T"
 
     if (myState.wasHit) {
