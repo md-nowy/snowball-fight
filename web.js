@@ -10,13 +10,13 @@ app.get('/', function (req, res) {
 
 app.post('/', function (req, res) {
     let myState = arenaUpdate.arena.state[arenaUpdate._links.self.href]
-    let move = "T"
+    let moveOrThrow = "T"
 
     if (myState.wasHit) {
-        move = listOf("F")
+        moveOrThrow = listOf("F")
     }
 
-    res.send(move);
+    res.send(moveOrThrow);
 });
 
 app.listen(process.env.PORT || 8080);
